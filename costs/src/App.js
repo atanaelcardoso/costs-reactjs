@@ -5,6 +5,7 @@ import Company from './components/pages/Company'
 import Contact from './components/pages/Contact'
 import NewProject from './components/pages/NewProject'
 import Projects from './components/pages/Projects'
+import Project from './components/pages/Project'
 
 import Container from './components/layout/Container'
 import Navbar from './component/layout/Navbar'
@@ -15,27 +16,30 @@ import Footer from './component/layout/Footer'
 function App() {
   return (
     <Router>
-    <Navbar/>
-    <Switch>
-      <Container customClass="min-height">
-       <Router exact path="/">
-       <Home/>
-       </Router>
-        <Router path="/projects">
-       <Projects/>
-       </Router>
-         <Router path="/company">
-       <Company/>
-       </Router>
-         <Router path="/contact">
-       <Contact/>
-         <Router path="/newproject">
-       <NewProject/>
-       </Router>
-       </Router>
-     </Container>
-    </Switch>
-      <Footer/>
+      <Navbar />
+      <Switch>
+        <Container customClass="min-height">
+          <Router exact path="/">
+            <Home />
+          </Router>
+          <Router path="/projects">
+            <Projects />
+          </Router>
+          <Router path="/company">
+            <Company />
+          </Router>
+          <Router path="/contact">
+            <Contact />
+            <Router path="/newproject">
+              <NewProject />
+            </Router>
+            <Router path="/project/:id">
+              <Project />
+            </Router>
+          </Router>
+        </Container>
+      </Switch>
+      <Footer />
     </Router>
   );
 }
